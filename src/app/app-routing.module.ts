@@ -12,7 +12,7 @@ import { SettingsComponent } from "./views/admin/settings/settings.component";
 import { TablesComponent } from "./views/admin/tables/tables.component";
 
 // auth views
-import { LoginComponent } from "./views/auth/login/login.component";
+import { LoginComponent } from "./views/auth/login/aprendiz/login.component";
 import { RegisterComponent } from "./views/auth/register/register.component";
 
 // no layouts views

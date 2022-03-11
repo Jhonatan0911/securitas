@@ -1,5 +1,6 @@
 <nav
   class="top-0 absolute z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg"
+  style="background-color: #ff6b00;"
 >
   <div
     class="container px-4 mx-auto flex flex-wrap items-center justify-between"
@@ -11,86 +12,76 @@
         [routerLink]="['/']"
         class="text-white text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase"
       >
-        Notus Angular
+        SECURITAS
       </a>
-      <button
-        class="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
-        type="button"
-        (click)="setNavbarOpen()"
-      >
-        <i class="text-white fas fa-bars"></i>
-      </button>
+      <img src="/src/assets/img/icon.png">
     </div>
     <div
       class="lg:flex flex-grow items-center bg-white lg:bg-opacity-0 lg:shadow-none"
       [ngClass]="{ hidden: !navbarOpen, 'block rounded shadow-lg': navbarOpen }"
       id="example-navbar-warning"
     >
-      <ul class="flex flex-col lg:flex-row list-none mr-auto">
-        <li class="flex items-center">
-          <a
-            class="lg:text-white lg:hover:text-blueGray-200 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
-            href="https://www.creative-tim.com/learning-lab/tailwind/angular/overview/notus?ref=na-auth-navbar"
-          >
-            <i
-              class="lg:text-blueGray-200 text-blueGray-400 far fa-file-alt text-lg leading-lg mr-2"
-            ></i>
-            Docs
-          </a>
-        </li>
-      </ul>
       <ul class="flex flex-col lg:flex-row list-none lg:ml-auto">
         <li class="flex items-center">
-          <app-pages-dropdown class="block"></app-pages-dropdown>
-        </li>
-        <li class="flex items-center">
-          <a
-            class="lg:text-white lg:hover:text-blueGray-200 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
-            href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdemos.creative-tim.com%2Fnotus-angular%2F"
-            target="_blank"
+          <button
+            class="bg-white text-blueGray-700 active:bg-blueGray-50 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3 ease-linear transition-all duration-150"
+            type="button" (click)="toggleModalP()"
           >
-            <i
-              class="lg:text-blueGray-200 text-blueGray-400 fab fa-facebook text-lg leading-lg"
-            ></i>
-            <span class="lg:hidden inline-block ml-2">Share</span>
-          </a>
-        </li>
-
-        <li class="flex items-center">
-          <a
-            class="lg:text-white lg:hover:text-blueGray-200 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
-            href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fdemos.creative-tim.com%2Fnotus-angular%2F&text=Start%20your%20development%20with%20a%20Free%20Tailwind%20CSS%20and%20Angular%20UI%20Kit%20and%20Admin.%20Let%20Notus%20Angular%20amaze%20you%20with%20its%20cool%20features%20and%20build%20tools%20and%20get%20your%20project%20to%20a%20whole%20new%20level."
-            target="_blank"
-          >
-            <i
-              class="lg:text-blueGray-200 text-blueGray-400 fab fa-twitter text-lg leading-lg"
-            ></i>
-            <span class="lg:hidden inline-block ml-2">Tweet</span>
-          </a>
-        </li>
-
-        <li class="flex items-center">
-          <a
-            class="lg:text-white lg:hover:text-blueGray-200 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
-            href="https://github.com/creativetimofficial/notus-angular?ref=na-auth-navbar"
-            target="_blank"
-          >
-            <i
-              class="lg:text-blueGray-200 text-blueGray-400 fab fa-github text-lg leading-lg"
-            ></i>
-            <span class="lg:hidden inline-block ml-2">Star</span>
-          </a>
+            Personal
+          </button>
         </li>
 
         <li class="flex items-center">
           <button
             class="bg-white text-blueGray-700 active:bg-blueGray-50 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3 ease-linear transition-all duration-150"
-            type="button"
+            type="button" (click)="toggleModalA()"
           >
-            <i class="fas fa-arrow-alt-circle-down"></i> Download
+            <i class="fas fa-user"></i>
           </button>
         </li>
       </ul>
     </div>
   </div>
 </nav>
+<div class="container mx-auto px-4 h-full">
+  <div class="flex content-center items-center justify-center h-full">
+    <div *ngIf="showModalP" class="absolute content-center items-center justify-center h-full z-10 overflow-y-hidden w-80" aria-labelledby="modal-title" role="dialog" aria-modal="true" style="top:10%">
+      <div class="content-center items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0 overlay mx-auto">
+        <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+        <div class="relative w-80 inline-block align-bottom bg-white rounded-lg overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+          <div class="bg-white py-5 pb-4">
+            <div class="text-center">
+              <app-loginPersonal></app-loginPersonal>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div *ngIf="showModalA" class="fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+  <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0 overlay">
+    <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+
+    <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+
+    <div class="relative inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+      <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+        <div class="sm:flex sm:items-start">
+          <div class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
+            <svg class="h-6 w-6 text-red-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            </svg>
+          </div>
+          <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+            <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title"></h3>
+            <app-loginAdmin></app-loginAdmin>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

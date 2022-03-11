@@ -15,7 +15,9 @@ import { SettingsComponent } from "./views/admin/settings/settings.component";
 import { TablesComponent } from "./views/admin/tables/tables.component";
 
 // auth views
-import { LoginComponent } from "./views/auth/login/login.component";
+import { LoginComponent } from "./views/auth/login/aprendiz/login.component";
+import { LoginPersonalComponent } from "./views/auth/login/personal/loginPersonal.component";
+import { LoginAdminComponent } from "./views/auth/login/admin/loginAdmin.component";
 import { RegisterComponent } from "./views/auth/register/register.component";
 
 // no layouts views
@@ -79,6 +81,8 @@ import { UserDropdownComponent } from "./components/dropdowns/user-dropdown/user
     MapsComponent,
     SettingsComponent,
     TablesComponent,
+    LoginAdminComponent,
+    LoginPersonalComponent,
     LoginComponent,
     RegisterComponent,
     IndexComponent,

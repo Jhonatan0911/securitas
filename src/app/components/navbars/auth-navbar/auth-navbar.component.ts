@@ -14,4 +14,12 @@ export class AuthNavbarComponent implements OnInit {
   setNavbarOpen() {
     this.navbarOpen = !this.navbarOpen;
   }
+  showModalA = false;
+  toggleModalA(){
+    this.showModalA = !this.showModalA;
+  }
+  showModalP = false;
+  toggleModalP(){
+    this.showModalP = !this.showModalP;
+  }
 }

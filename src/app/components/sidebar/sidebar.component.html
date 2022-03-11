@@ -1,3 +1,8 @@
+<style>
+  .text-orange {
+    color: #ff6b00 !important;
+  }
+</style>
 <nav
   class="md:left-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-nowrap md:overflow-hidden shadow-xl bg-white flex flex-wrap items-center justify-between relative md:w-64 z-10 py-4 px-6"
 >
@@ -18,7 +23,7 @@
       class="md:block text-left md:pb-2 text-blueGray-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0"
     >
       <span class="block sm:hidden"> Tailwind Angular </span>
-      <span class="hidden sm:block"> Notus Angular </span>
+      <span class="hidden sm:block"> Panel de control </span>
     </a>
     <!-- User -->
     <ul class="md:hidden items-center flex flex-wrap list-none">
@@ -44,7 +49,7 @@
               [routerLink]="['/']"
               class="md:block text-left md:pb-2 text-blueGray-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0"
             >
-              Notus Angular
+              Panel de control
             </a>
           </div>
           <div class="w-6/12 flex justify-end">
@@ -75,7 +80,7 @@
       <h6
         class="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline"
       >
-        Admin Layout Pages
+        Configuración
       </h6>
       <!-- Navigation -->
 
@@ -88,17 +93,17 @@
             #adminDashboard="routerLinkActive"
             [ngClass]="
               adminDashboard.isActive
-                ? 'text-red-600 hover:text-red-700'
+                ? 'text-orange hover:text-orange-900'
                 : 'text-blueGray-700 hover:text-blueGray-500'
             "
           >
             <i
-              class="fas fa-tv mr-2 text-sm"
+              class="fas fa-map-marked mr-2 text-sm"
               [ngClass]="
                 adminDashboard.isActive ? 'opacity-75' : 'text-blueGray-300'
               "
             ></i>
-            Dashboard
+            Regional
           </a>
         </li>
 
@@ -110,17 +115,17 @@
             #adminSettings="routerLinkActive"
             [ngClass]="
               adminSettings.isActive
-                ? 'text-red-600 hover:text-red-700'
+                ? 'text-orange hover:text-orange-700'
                 : 'text-blueGray-700 hover:text-blueGray-500'
             "
           >
             <i
-              class="fas fa-tools mr-2 text-sm"
+              class="fas fa-building mr-2 text-sm"
               [ngClass]="
                 adminSettings.isActive ? 'opacity-75' : 'text-blueGray-300'
               "
             ></i>
-            Settings
+            Centro
           </a>
         </li>
 
@@ -132,17 +137,17 @@
             #adminTables="routerLinkActive"
             [ngClass]="
               adminTables.isActive
-                ? 'text-red-600 hover:text-red-700'
+                ? 'text-orange hover:text-orange-700'
                 : 'text-blueGray-700 hover:text-blueGray-500'
             "
           >
             <i
-              class="fas fa-table mr-2 text-sm"
+              class="fas fa-home mr-2 text-sm"
               [ngClass]="
                 adminTables.isActive ? 'opacity-75' : 'text-blueGray-300'
               "
             ></i>
-            Tables
+            Sedes
           </a>
         </li>
 
@@ -154,7 +159,72 @@
             #adminMaps="routerLinkActive"
             [ngClass]="
               adminMaps.isActive
-                ? 'text-red-600 hover:text-red-700'
+                ? 'text-orange hover:text-orange-700'
+                : 'text-blueGray-700 hover:text-blueGray-500'
+            "
+          >
+            <i
+              class="fas fa-user-tie mr-2 text-sm"
+              [ngClass]="
+                adminMaps.isActive ? 'opacity-75' : 'text-blueGray-300'
+              "
+            ></i>
+            Coordinación
+          </a>
+        </li>
+
+        <li class="items-center">
+          <a
+            [routerLink]="['/admin/maps']"
+            class="text-xs uppercase py-3 font-bold block"
+            routerLinkActive
+            #adminMaps="routerLinkActive"
+            [ngClass]="
+              adminMaps.isActive
+                ? 'text-orange hover:text-orange-700'
+                : 'text-blueGray-700 hover:text-blueGray-500'
+            "
+          >
+            <i
+              class="fas fa-user mr-2 text-sm"
+              [ngClass]="
+                adminMaps.isActive ? 'opacity-75' : 'text-blueGray-300'
+              "
+            ></i>
+            Instructores
+          </a>
+        </li>
+
+        <li class="items-center">
+          <a
+            [routerLink]="['/admin/maps']"
+            class="text-xs uppercase py-3 font-bold block"
+            routerLinkActive
+            #adminMaps="routerLinkActive"
+            [ngClass]="
+              adminMaps.isActive
+                ? 'text-orange hover:text-orange-700'
+                : 'text-blueGray-700 hover:text-blueGray-500'
+            "
+          >
+            <i
+              class="fas fa-chalkboard mr-2 text-sm"
+              [ngClass]="
+                adminMaps.isActive ? 'opacity-75' : 'text-blueGray-300'
+              "
+            ></i>
+            Programas
+          </a>
+        </li>
+        <li class="items-center">
+          <a
+            [routerLink]="['/admin/maps']"
+            class="text-xs uppercase py-3 font-bold block"
+            routerLinkActive
+            #adminMaps="routerLinkActive"
+            [ngClass]="
+              adminMaps.isActive
+                ? 'text-orange hover:text-orange-700'
                 : 'text-blueGray-700 hover:text-blueGray-500'
             "
           >
@@ -164,7 +234,70 @@
                 adminMaps.isActive ? 'opacity-75' : 'text-blueGray-300'
               "
             ></i>
-            Maps
+            Fichas
+          </a>
+        </li>
+        <li class="items-center">
+          <a
+            [routerLink]="['/admin/maps']"
+            class="text-xs uppercase py-3 font-bold block"
+            routerLinkActive
+            #adminMaps="routerLinkActive"
+            [ngClass]="
+              adminMaps.isActive
+                ? 'text-orange hover:text-orange-700'
+                : 'text-blueGray-700 hover:text-blueGray-500'
+            "
+          >
+            <i
+              class="fas fa-users mr-2 text-sm"
+              [ngClass]="
+                adminMaps.isActive ? 'opacity-75' : 'text-blueGray-300'
+              "
+            ></i>
+            Aprendices
+          </a>
+        </li>
+        <li class="items-center">
+          <a
+            [routerLink]="['/admin/maps']"
+            class="text-xs uppercase py-3 font-bold block"
+            routerLinkActive
+            #adminMaps="routerLinkActive"
+            [ngClass]="
+              adminMaps.isActive
+                ? 'text-orange hover:text-orange-700'
+                : 'text-blueGray-700 hover:text-blueGray-500'
+            "
+          >
+            <i
+              class="fas fa-address-card mr-2 text-sm"
+              [ngClass]="
+                adminMaps.isActive ? 'opacity-75' : 'text-blueGray-300'
+              "
+            ></i>
+            Tipo de documento
+          </a>
+        </li>
+        <li class="items-center">
+          <a
+            [routerLink]="['/admin/maps']"
+            class="text-xs uppercase py-3 font-bold block"
+            routerLinkActive
+            #adminMaps="routerLinkActive"
+            [ngClass]="
+              adminMaps.isActive
+                ? 'text-orange hover:text-orange-700'
+                : 'text-blueGray-700 hover:text-blueGray-500'
+            "
+          >
+            <i
+              class="fas fa-briefcase mr-2 text-sm"
+              [ngClass]="
+                adminMaps.isActive ? 'opacity-75' : 'text-blueGray-300'
+              "
+            ></i>
+            Tipo de personal
           </a>
         </li>
       </ul>
@@ -175,7 +308,7 @@
       <h6
         class="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline"
       >
-        Auth Layout Pages
+        Movimientos
       </h6>
       <!-- Navigation -->
 
@@ -185,8 +318,8 @@
             [routerLink]="['/auth/login']"
             class="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
           >
-            <i class="fas fa-fingerprint text-blueGray-300 mr-2 text-sm"></i>
-            Login
+            <i class="fas fa-door-closed text-blueGray-300 mr-2 text-sm"></i>
+            Entradas
           </a>
         </li>
 
@@ -195,8 +328,8 @@
             [routerLink]="['/auth/register']"
             class="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
           >
-            <i class="fas fa-clipboard-list text-blueGray-300 mr-2 text-sm"></i>
-            Register
+            <i class="fas fa-door-open text-blueGray-300 mr-2 text-sm"></i>
+            Salidas
           </a>
         </li>
       </ul>
@@ -207,7 +340,7 @@
       <h6
         class="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline"
       >
-        No Layout Pages
+        Operaciones
       </h6>
       <!-- Navigation -->
 
@@ -217,18 +350,8 @@
             [routerLink]="['/landing']"
             class="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
           >
-            <i class="fas fa-newspaper text-blueGray-300 mr-2 text-sm"></i>
-            Landing Page
-          </a>
-        </li>
-
-        <li class="items-center">
-          <a
-            [routerLink]="['/profile']"
-            class="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
-          >
-            <i class="fas fa-user-circle text-blueGray-300 mr-2 text-sm"></i>
-            Profile Page
+            <i class="fas fa-clipboard-list text-blueGray-300 mr-2 text-sm"></i>
+            Formulario
           </a>
         </li>
       </ul>
@@ -239,7 +362,7 @@
       <h6
         class="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline"
       >
-        Documentation
+        Administración de usuarios
       </h6>
       <!-- Navigation -->
       <ul class="md:flex-col md:min-w-full flex flex-col list-none md:mb-4">
@@ -249,8 +372,8 @@
             target="_blank"
             class="text-blueGray-700 hover:text-blueGray-500 text-sm block mb-4 no-underline font-semibold"
           >
-            <i class="fas fa-paint-brush mr-2 text-blueGray-300 text-base"></i>
-            Styles
+            <i class="fas fa-user mr-2 text-blueGray-300 text-base"></i>
+            Roles
           </a>
         </li>
 
@@ -260,8 +383,8 @@
             target="_blank"
             class="text-blueGray-700 hover:text-blueGray-500 text-sm block mb-4 no-underline font-semibold"
           >
-            <i class="fab fa-css3-alt mr-2 text-blueGray-300 text-base"></i>
-            CSS Components
+            <i class="fas fa-users mr-2 text-blueGray-300 text-base"></i>
+            Usuarios
           </a>
         </li>
 
@@ -271,63 +394,29 @@
             target="_blank"
             class="text-blueGray-700 hover:text-blueGray-500 text-sm block mb-4 no-underline font-semibold"
           >
-            <i class="fab fa-angular mr-2 text-blueGray-300 text-base"></i>
-            Angular
+            <i class="fas fa-id-card mr-2 text-blueGray-300 text-base"></i>
+            Carnet
           </a>
         </li>
+      </ul>
+      <!-- Divider -->
+      <hr class="my-4 md:min-w-full" />
+      <!-- Heading -->
+      <h6
+        class="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline"
+      >
 
-        <li class="inline-flex">
-          <a
-            href="https://www.creative-tim.com/learning-lab/tailwind/js/overview/notus"
-            target="_blank"
-            class="text-blueGray-700 hover:text-blueGray-500 text-sm block mb-4 no-underline font-semibold"
-          >
-            <i class="fab fa-js-square mr-2 text-blueGray-300 text-base"></i>
-            Javascript
-          </a>
-        </li>
+      </h6>
+      <!-- Navigation -->
 
-        <li class="inline-flex">
+      <ul class="md:flex-col md:min-w-full flex flex-col list-none md:mb-4">
+        <li class="items-center">
           <a
-            href="https://www.creative-tim.com/learning-lab/tailwind/nextjs/overview/notus"
-            target="_blank"
-            class="text-blueGray-700 hover:text-blueGray-500 text-sm block mb-4 no-underline font-semibold"
+            [routerLink]="['/landing']"
+            class="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
           >
-            <i class="fab fa-react mr-2 text-blueGray-300 text-base"></i>
-            NextJS
-          </a>
-        </li>
-
-        <li class="inline-flex">
-          <a
-            href="https://www.creative-tim.com/learning-lab/tailwind/react/overview/notus"
-            target="_blank"
-            class="text-blueGray-700 hover:text-blueGray-500 text-sm block mb-4 no-underline font-semibold"
-          >
-            <i class="fab fa-react mr-2 text-blueGray-300 text-base"></i>
-            React
-          </a>
-        </li>
-
-        <li class="inline-flex">
-          <a
-            href="https://www.creative-tim.com/learning-lab/tailwind/svelte/overview/notus"
-            target="_blank"
-            class="text-blueGray-700 hover:text-blueGray-500 text-sm block mb-4 no-underline font-semibold"
-          >
-            <i class="fas fa-link mr-2 text-blueGray-300 text-base"></i>
-            Svelte
-          </a>
-        </li>
-
-        <li class="inline-flex">
-          <a
-            href="https://www.creative-tim.com/learning-lab/tailwind/vue/overview/notus"
-            target="_blank"
-            class="text-blueGray-700 hover:text-blueGray-500 text-sm block mb-4 no-underline font-semibold"
-          >
-            <i class="fab fa-vuejs mr-2 text-blueGray-300 text-base"></i>
-            VueJS
+            <i class="fas fa-log-out text-blueGray-300 mr-2 text-sm"></i>
+            Cerrar sesion
           </a>
         </li>
       </ul>
